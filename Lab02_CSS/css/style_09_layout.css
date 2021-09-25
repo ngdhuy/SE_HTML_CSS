@@ -1,0 +1,90 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#container {
+  background-color: #d57e7e ;
+  width: 80%;
+  margin: auto auto 25px auto;
+}
+
+header {
+  background-color: #c6d57e;
+  min-height: 100px;
+}
+
+nav {
+  background-color: #a2cdcd;
+  min-height: 50px;
+  line-height: 50px;
+}
+
+aside {
+  background-color: #ffe1af;
+  width: 20%;
+  min-height: 200px;
+  float: left;
+}
+
+section {
+  background-color: #c6ebc9;
+  width: 60%;
+  min-height: 800px;
+  float: left;
+}
+article {
+  background-color: #70af85;
+  margin: 5px;
+  padding: 5px;
+}
+
+footer {
+  background-color: #aa8976;
+  min-height: 50px;
+  line-height: 50px;
+  text-align: center;
+  clear: both;
+}
+
+.menu, .sub-menu {
+  list-style: none;
+  padding: 0; 
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  background-color: #b97a95;
+  padding-left: 5px;
+  margin-bottom: 1px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.menu a:hover { background-color: #716f81; }
+
+.sub-menu {
+  position: absolute;
+  margin-left: 16%;
+  margin-top: -26px;
+  width: 100px;
+  visibility: hidden;
+}
+
+.menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.adv {
+  background-color: #ea2c62;
+  color: #fff;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+}
