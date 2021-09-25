@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector - Grouping</title>
+  <style type="text/css">
+    h1{ 
+      font-style: italic;
+    }
+
+    #footer { 
+      padding: 5px;
+      background-color: #66FFcc;
+      font-weight: bold;
+    }
+
+    .red-style {
+      border: 1px solid #3366cc;
+      padding: 10px;
+    }
+
+    /* Grouping */
+    h1, #footer, .red-style {
+      color: #cc3366;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Selector - Grouping</h1>
+
+  <p>This is paragraph 1</p>
+  <p>This is paragraph 2</p>
+  <p class="red-style">This is paragraph 3</p>
+
+  <div id="footer">This is footer 1</div>
+  <div>This is footer 2</div>
+</body>
+</html>
