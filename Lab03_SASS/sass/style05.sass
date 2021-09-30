@@ -1,0 +1,49 @@
+// import module from other files
+
+@use 'dark'
+@use 'light' as theme
+
+// Extend/Inheritance
+%set-size
+  padding: 10px 20px 
+  margin: 10px (0.33 / 2 * 1%) //--> Operator
+
+%set-color
+  background-color: theme.$color-blue
+  color: theme.$font-color
+
+%set-body-color
+  background-color: theme.$body-color
+
+*
+  color: theme.$font-color
+
+body
+  @extend %set-body-color
+
+h1
+  background-color: theme.$color-red
+
+div 
+  background-color: theme.$color-blue
+
+nav
+  div 
+    @extend %set-color
+    @extend %set-size
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      background-color: theme.$color-red
+      
+
+  a
+    background-color: theme.$color-blue
+    text-decoration: none
+    display: block
+    @extend %set-size
+  
