@@ -1,0 +1,42 @@
+// import module from other files
+
+@use 'dark'
+@use 'light' as theme
+
+// Define mixins ~ funtion
+@mixin box($top-bottom: 5px, $left-right: 5px)
+  padding: $top-bottom $left-right
+  margin: $top-bottom $left-right
+  box-shadow: 5px 5px 5px rgba(theme.$font-color, 0.25)
+
+*
+  color: theme.$font-color
+
+body
+  background-color: theme.$body-color
+
+h1
+  background-color: theme.$color-red
+
+div 
+  background-color: theme.$color-blue
+
+nav
+  div 
+    @include box()
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      background-color: theme.$color-red
+      @include box(10px, 10px)
+
+  a
+    background-color: theme.$color-blue
+    text-decoration: none
+    display: block
+    @include box(20px, 20px)
+  
