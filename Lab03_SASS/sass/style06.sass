@@ -1,0 +1,54 @@
+// import module from other files
+
+@use 'dark'
+@use 'light' as theme
+
+// mixins
+@mixin box($top: 5px, $right: 5px, $bottom: 5px, $left: 5px)
+  margin: $top $right $bottom $left
+  padding: $top $right $bottom $left
+
+// function
+@function make-shadow($value)
+    @return (10px 10px 10px rgba(theme.$color-blue, 0.25))
+
+@for $i from 1 through 3
+  li:nth-child(2n + #{$i})
+    @if ($i % 2 == 0)
+      background-color: theme.$color-blue
+    @else 
+      background-color: theme.$color-red
+
+*
+  color: theme.$font-color
+
+body
+  background-color: theme.$body-color
+
+h1
+  background-color: theme.$color-red
+  box-shadow: make-shadow(10px)
+
+div 
+  background-color: theme.$color-blue
+
+nav
+  div 
+    background-color: theme.$color-blue
+    @include box()
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      background-color: theme.$color-red
+      
+
+  a
+    background-color: theme.$color-blue
+    text-decoration: none
+    display: block
+    @include box(10px, 10px, 10px, 10px)
+  
