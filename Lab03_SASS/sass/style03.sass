@@ -1,0 +1,37 @@
+// import module from other files
+
+@use 'dark'
+@use 'light' as theme
+
+*
+  color: theme.$font-color
+
+body
+  background-color: theme.$body-color
+
+h1
+  background-color: theme.$color-red
+
+div 
+  background-color: theme.$color-blue
+
+nav
+  div 
+    margin: 20px 0 0 0
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      background-color: theme.$color-red
+      margin: 5px
+
+  a
+    background-color: theme.$color-blue
+    text-decoration: none
+    display: block
+    padding: 5px 10px
+
+  
