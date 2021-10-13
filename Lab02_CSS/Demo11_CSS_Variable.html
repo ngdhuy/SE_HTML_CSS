@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS4 - variables</title>
+  <style type="text/css">
+    :root { 
+      --color-yellow: #ffc205;
+      --color-red: #eb1d65;
+      --color-pure: #663bb7;
+      --color-green: #76b947;
+      --color-blue: #3366cc;
+      --color-white: #fff;
+      --color-gray: #a5a5a5;
+    }
+
+    h1 { color: var(--color-red); }
+
+    div { 
+      margin: 10px 0;
+      padding: 10px;
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
+
+    :required { border: 1px solid var(--color-red); }
+    :optional { border: 1px solid var(--color-green); }
+
+  </style>
+</head>
+<body>
+  <h1>CSS - variables</h1>
+  <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora animi, velit placeat impedit, quas doloremque rem quibusdam sunt voluptatem quod ea! Vero quam ipsa doloremque eligendi, nobis blanditiis assumenda voluptates?</div>
+  <div>Ratione obcaecati, praesentium minus commodi vel atque. Amet natus tempora nobis quidem, voluptas quod aperiam, voluptatum, voluptatem cum illo maxime repellendus architecto. Dolor, neque dicta accusantium nihil dolores sint dolore.</div>
+
+  <form method="get">
+    <input type="text" name="txtUserName" required="required" />
+    <input type="password" name="txtPassword" />
+    <button type="button" name="btnLogin">Login</button>
+  </form>
+</body>
+</html>
