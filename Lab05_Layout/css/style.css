@@ -1,3 +1,97 @@
+* {
+  font-family: "Source Sans Pro";
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  row-gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 1rem 1.75rem;
+  border-radius: 5px;
+}
+
+.btn-green {
+  background-color: #17667f;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #fff;
+  color: #1d809f;
+}
+
+.btn-green:active {
+  background-color: #17667f;
+  color: #fff;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#home {
+  background: url(../img/bg-masthead.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+#about {
+  background-color: #fff;
+}
+
+#service {
+  background-color: #1d809f;
+}
+
+#callout {
+  background: url(../img/bg-callout.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#portfolio {
+  background-color: #fff;
+}
+
+#action {
+  background-color: #1d809f;
+}
+
+#map {
+  background-color: #fff;
+}
+
+#footer {
+  background-color: #1d809f;
+}
 
 /*# sourceMappingURL=style.css.map */

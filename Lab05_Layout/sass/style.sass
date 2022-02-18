@@ -1,0 +1,84 @@
+$color-green: #1d809f
+$color-green-dark: #17667f
+$color-dark: #343a40
+$color-yellow: #f2b912
+$color-white: #fff
+
+*
+  font-family: "Source Sans Pro"
+  margin: 0
+  padding: 0
+
+.container
+  display: flex
+  flex-direction: column
+
+section
+  height: 100vh
+
+.content
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  height: 100vh
+  row-gap: 1rem
+
+a 
+  text-decoration: none
+
+.btn
+  padding: 1rem 1.75rem
+  border-radius: 5px
+
+.btn-green
+  background-color: $color-green-dark
+  color: $color-white
+
+.btn-green:hover
+  background-color: $color-white
+  color: $color-green
+
+.btn-green:active 
+  background-color: $color-green-dark
+  color: $color-white
+
+h1 
+  font-size: 4rem
+  font-weight: 700
+
+h3
+  font-size: 1.5rem
+  font-style: italic
+  font-weight: 400
+
+// define styles for Section 
+#home
+  background: url(../img/bg-masthead.jpg)
+  background-position: center center
+  background-size: cover
+
+#about
+  background-color: $color-white
+  
+#service
+  background-color: $color-green
+  
+#callout
+  background: url(../img/bg-callout.jpg)
+  background-position: center center
+  background-size: cover
+  background-attachment: fixed
+  
+#portfolio
+  background-color: $color-white
+  
+#action
+  background-color: $color-green
+  
+#map
+  background-color: $color-white
+  
+#footer
+  background-color: $color-green
+  
