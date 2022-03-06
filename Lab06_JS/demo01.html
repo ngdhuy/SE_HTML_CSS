@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Import Javascript to HTML file</title>
+  <script type="text/javascript">
+    alert("1. First script in the head");
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+    alert("2. Second script inside body");
+  </script>
+  
+  <h1>Import Javascript to HTML files</h1>
+
+  <script type="text/javascript">
+    alert("3. Third script after render <h1>");
+  </script>
+  
+  <h2>This is footer of the pages</h2>
+
+  <script src="./js/script.js"></script>
+  <script type="text/javascript">
+    sayHello();
+  </script>
+</body>
+</html>
