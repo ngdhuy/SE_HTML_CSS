@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window object</title>
+</head>
+<body onload="document.bgColor='#c8f4de'">
+  <h1>Windows object</h1>
+  <script type="text/javascript">
+    currentURL = window.location;
+    document.writeln(`<div>Location: ${currentURL}</div>`);
+  </script>
+  
+  <hr />
+  
+  <button type="button" onclick="window.location='https://www.google.com'">Move to Google</button>
+  <button type="button" onclick="window.open('https://www.google.com')">Open new window to Google</button>
+  <button type="button" onclick="showBrowserInfo()">Show browser information</button>
+  
+  <hr />
+
+  <button type="button" onclick="handleAlert()">Alert</button>
+  <button type="button" onclick="handleConfirm()">Confirm</button>
+  <button type="button" onclick="handlePrompt()">Prompt</button>
+
+  <script type="text/javascript">
+    function showBrowserInfo() {
+      let str = window.navigator.appName;
+      str += "\n" + window.navigator.appVersion;
+
+      alert(str);
+    }
+
+    function handleAlert() { window.alert("Just show message !!!"); }
+    
+    function handleConfirm() {
+      let result = window.confirm("Do you confirm the message information?");
+      window.alert("Result = " + result);
+    }
+    
+    function handlePrompt() {
+      let result = window.prompt("What is your name?", "no-name");
+      window.alert("Result = " + result);
+    }
+
+  </script>
+</body>
+</html>
