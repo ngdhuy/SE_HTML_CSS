@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validate form</title>
+  <style type="text/css">
+    #err { color: #ff0000; }
+  </style>
+</head>
+<body>
+  <h1>Validate form</h1>  
+  <form action="https://www.google.com/search" method="get">
+    <div>
+      <span>Keyword: </span>
+      <input type="text" name="q" id="q" />
+      <button type="submit">Search</button>
+    </div>
+    <div id="err"></div> 
+  </form>
+
+  <script type="text/javascript">
+    document.querySelector('form').onsubmit = function () {
+      let control = document.querySelector('#q');
+      let err_message = document.querySelector('#err');
+
+      if(control.value.length === 0) {
+        control.focus();
+        err_message.innerText = "Keyword is not blank!";
+        return false;
+      } else {
+        err_message.innerText = "";
+        return true;
+      }
+    }
+  </script>
+</body>
+</html>
