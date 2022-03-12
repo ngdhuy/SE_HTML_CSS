@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validate sign-up form</title>
+  <style type="text/css">
+    span { color: #ff0000; }
+    div { margin: 10px; }
+    label { display: inline-block; text-align: right; width: 120px;}
+    .btn-group { padding-left: 125px; }
+  </style>
+</head>
+<body>
+  <h1>Sign-up new account</h1>
+  <form action="">
+    <div>
+      <label for="us">Username</label>
+      <input type="text" name="us" id="us" />
+      <span id="err-us"></span>
+    </div>
+    <div>
+      <label for="pw">Password</label>
+      <input type="password" name="pw" id="pw" />
+      <span id="err-pw"></span>
+    </div>
+    <div>
+      <label for="rpw">Re-type password</label>
+      <input type="password" name="rpw" id="rpw" />
+      <span id="err-rpw"></span>
+    </div>
+    <div class="btn-group">
+      <button type="button">Sign-in</button>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+  
+  <hr />
+  <div id="acc-info"></div>
+
+  <script type="text/javascript">
+    document.querySelector("button[type=button]").onclick = function() {
+      let us = document.getElementById('us');
+      let pw = document.getElementById('pw');
+      let rpw = document.getElementById('rpw');
+
+      let err_us = document.querySelector('#err-us');
+      let err_pw = document.querySelector('#err-pw');
+      let err_rpw = document.querySelector('#err-rpw');
+
+      let acc_info = document.querySelector('#acc-info');
+
+      let flag_validate = true;
+
+      // check username
+      if(us.value.length === 0) {
+        us.focus(); 
+        err_us.innerText = "Username must not be blank! ";
+        flag_validate = false;
+      } else {  
+        err_us.innerText = "";
+      }
+
+      // check password
+      if(pw.value.length === 0) {
+        pw.focus(); 
+        err_pw.innerText = "Password must not be blank! ";
+        flag_validate = false;
+      } else if(pw.value.length < 8) {
+        pw.focus(); 
+        err_pw.innerText = "Length of password must be more than 8 characters";
+        flag_validate = false;
+      } else {
+        err_pw.innerText = "";
+      }
+
+      // check re-type password
+      if(rpw.value.length === 0) {
+        rpw.focus(); 
+        err_rpw.innerText = "Re-type password must not be blank";
+        flag_validate = false;
+      } else if(rpw.value !== pw.value) {
+        rpw.focus(); 
+        err_rpw.innerText = "Re-type password and password don't match";
+        flag_validate = false;
+      } else {
+        err_rpw.innerText = "";
+      }
+
+      // show account information
+      if(flag_validate === true) {
+        let h_node = document.createElement('h1');
+        let h_text_node = document.createTextNode('Account information');
+        h_node.appendChild(h_text_node);
+        acc_info.appendChild(h_node);
+
+        let ul_node = document.createElement('ul');
+        acc_info.appendChild(ul_node);
+
+        let li_us_node = document.createElement('li');
+        let text_us_node = document.createTextNode("Username: " + us.value);
+        li_us_node.appendChild(text_us_node);
+        ul_node.appendChild(li_us_node);
+
+        let li_pw_node = document.createElement('li');
+        let text_pw_node = document.createTextNode("Password: " + pw.value);
+        li_pw_node.appendChild(text_pw_node);
+        ul_node.appendChild(li_pw_node);
+      }
+    }
+  </script>
+</body>
+</html>

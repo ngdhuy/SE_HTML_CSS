@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML DOM (cont.)</title>
+</head>
+<body>
+  <div id="data">
+    <h2>Title of document</h2>
+    <p>This is the text</p>
+  </div>
+  <hr />
+  <button type="button" onclick="getInner_Text()">InnerText</button>
+  <button type="button" onclick="getInner_HTML()">InnerHTML</button>
+  <button type="button" onclick="getOuter_Text()">OuterText</button>
+  <button type="button" onclick="getOuter_HTML()">OuterHTML</button>
+  <hr />
+  <div id="pos"></div>
+
+  <script type="text/javascript">
+    var dataNode = document.querySelector('#data');
+    var posNode = document.querySelector('#pos');
+    
+    function getInner_Text() {
+      posNode.innerText = dataNode.innerText;
+    }
+
+    function getInner_HTML() {
+      posNode.innerText = dataNode.innerHTML;
+    }
+
+    function getOuter_Text() {
+      posNode.innerText = dataNode.outerText;
+    }
+
+    function getOuter_HTML() {
+      posNode.innerText = dataNode.outerHTML;
+    }
+  </script>
+</body>
+</html>
