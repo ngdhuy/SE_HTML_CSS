@@ -65,6 +65,7 @@
     let memory = '0';
     let operator = null;
     let is_dot = false;
+    let is_cal = false;
     let value_screen = document.querySelector('#screen');
 
     document.querySelector('.btn-zero').addEventListener("click", add_number);
@@ -93,9 +94,7 @@
     function total_calculate() {
       calculate();
       value_screen.innerText = value + (!is_dot ? '.' : '');
-
-      memory = '0';
-      operator = null;
+      is_cal = true;
     }
 
     function calculate() {
@@ -123,7 +122,10 @@
     }
 
     function set_operator(){
-      calculate();
+      if(is_cal)
+        is_cal = false;
+      else
+        calculate();
       value_screen.innerText = value + (!is_dot ? '.' : '');
       if(value != 'Error div 0') {
         memory = value;
@@ -143,6 +145,7 @@
       memory = '0';
       value = '0';
       is_dot = false;
+      is_cal = false;
 
       value_screen.innerText = '0.';
     }
@@ -155,6 +158,9 @@
     }
 
     function add_number() {
+      if(is_cal)
+        clear();
+
       let number = this.innerText;
       if(value === '0') {
         value = number;
