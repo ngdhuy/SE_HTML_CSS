@@ -66,6 +66,7 @@
     let operator = null;
     let is_dot = false;
     let is_cal = false;
+    let is_new = true;
     let value_screen = document.querySelector('#screen');
 
     document.querySelector('.btn-zero').addEventListener("click", add_number);
@@ -87,10 +88,19 @@
     document.querySelector('.btn-sub').addEventListener('click', set_operator);
     document.querySelector('.btn-mul').addEventListener('click', set_operator);
     document.querySelector('.btn-div').addEventListener('click', set_operator);
-    
 
+    document.querySelector('.btn-percent').addEventListener('click', cal_percent);
+  
     document.querySelector('.btn-calculate').addEventListener('click', total_calculate);
     
+    function cal_percent() {
+      value = parseFloat(value) / 100;
+      if(parseFloat(value) > parseInt(value))
+        is_dot = true;
+      value_screen.innerText = value + (!is_dot ? '.' : '');
+      is_cal = true;
+    }
+
     function total_calculate() {
       calculate();
       value_screen.innerText = value + (!is_dot ? '.' : '');
@@ -112,20 +122,25 @@
           result = val_memory * val_current;
           break;
         case '/':
-          if(value_current === 0)
+          if(val_current === 0)
             result = 'Error div 0';
           else
             result = val_memory / val_current;
           break;
       }
       value = result;
+      if(parseFloat(value) > parseInt(value))
+        is_dot = true;
     }
 
     function set_operator(){
       if(is_cal)
         is_cal = false;
       else
-        calculate();
+        if(!is_new)
+          calculate();
+        else
+          is_new = false;
       value_screen.innerText = value + (!is_dot ? '.' : '');
       if(value != 'Error div 0') {
         memory = value;
@@ -146,6 +161,7 @@
       value = '0';
       is_dot = false;
       is_cal = false;
+      is_new = true;
 
       value_screen.innerText = '0.';
     }
