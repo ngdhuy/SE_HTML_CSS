@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes Management</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Coffee Brew Recipes</h1>
+    <p>Add custom recipes for client</p>
+  </div>
+
+  <main>
+    <form action="#" id="frmRecipes">
+      <div class="input-item">
+        <label for="txtName">Name of recipes</label>
+        <input type="text" required="required" id="txtName" class="form-control" placeholder="Enter name of recipes">
+      </div>
+      <div class="input-item">
+        <label for="ddlMethod">Brew method</label>
+        <select id="ddlMethod" class="form-control">
+          <option>Default</option>
+          <option>Hot</option>
+          <option>Ice</option>
+          <option>Middle</option>
+        </select>
+      </div>
+      <div class="input-item">
+        <label for="txtNote">Notes <span>(options)</span></label>
+        <input type="text" id="txtNote" class="form-control">
+      </div>
+      <div class="input-item">
+        <button type="submit">Add Recipes</button>
+      </div>
+    </form>
+  </main>
+  
+  <div class="content">
+    <h2>Saved Recipes</h2>
+    <div class="recipes-list"></div>
+  </div>
+  <script src="./js/app.js"></script>
+</body>
+</html>
