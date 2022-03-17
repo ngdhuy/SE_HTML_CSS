@@ -6,6 +6,7 @@
   --color-white     : #ffffff;
   --color-gray      : #797979;
   --color-gray-light: #ced4da;
+  --color-red       : #9e2323;
 }
 
 body { font-family: Arial, Helvetica, sans-serif ; }
@@ -81,6 +82,19 @@ form, .recipes-list {
   padding: 1rem;
   background-color: var(--color-green);
   color: var(--color-white);
+}
+
+.recipes-item button {
+  margin: 0;
+  padding: 0.35rem;
+  width: 100%;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border: 0;
+}
+
+.recipes-item button:active {
+  background-color: var(--color-blue-dark);
 }
 
 @media (min-width: 1400px) {
